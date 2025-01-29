@@ -1,0 +1,38 @@
+!
+hostname ASBR
+!
+!
+interface Loopback0
+ ip address 10.1.1.1 255.255.255.255
+ ip ospf 1 area 0
+!
+interface Ethernet0/0
+ ip address 192.168.1.1 255.255.255.252
+!
+interface Ethernet0/1
+ ip address 192.168.1.5 255.255.255.252
+!
+interface Ethernet0/2
+ ip address 192.168.1.17 255.255.255.252
+!
+interface Ethernet0/3
+ ip address 192.168.1.21 255.255.255.252
+!
+interface Serial1/0
+ ip address 70.20.208.10 255.255.255.252
+ encapsulation ppp
+!
+!
+router ospf 1
+ passive-interface Loopback0
+ network 192.168.1.0 0.0.0.3 area 0
+ network 192.168.1.4 0.0.0.3 area 0
+ network 192.168.1.16 0.0.0.3 area 0
+ network 192.168.1.20 0.0.0.3 area 0
+ default-information originate
+!
+!
+ip route 0.0.0.0 0.0.0.0 70.20.208.9
+!
+!
+end

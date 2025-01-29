@@ -1,0 +1,10 @@
+!
+hostname ISP
+!
+!
+interface Serial1/0
+ ip address 70.20.208.9 255.255.255.252
+ encapsulation ppp
+!
+!
+end

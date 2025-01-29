@@ -1,0 +1,32 @@
+!
+hostname R2
+!
+!
+interface Loopback0
+ ip address 10.3.3.3 255.255.255.255
+ ip ospf 1 area 0
+!
+interface GigabitEthernet0/0
+ ip address 192.168.1.6 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 192.168.1.10 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 192.168.1.25 255.255.255.252
+ duplex auto
+ speed auto
+!
+!
+router ospf 1
+ passive-interface Loopback0
+ network 192.168.1.4 0.0.0.3 area 0
+ network 192.168.1.8 0.0.0.3 area 0
+ network 192.168.1.24 0.0.0.3 area 0
+!
+!
+end

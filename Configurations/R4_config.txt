@@ -1,0 +1,18 @@
+!
+hostname R4
+!
+!
+interface Loopback0
+ ip address 10.7.7.7 255.255.255.255
+ ip ospf 1 area 10
+!
+interface Ethernet0/0
+ ip address 192.168.1.34 255.255.255.252
+!
+!
+router ospf 1
+ passive-interface Loopback0
+ network 192.168.1.32 0.0.0.3 area 10
+!
+!
+end
