@@ -16,6 +16,7 @@ This project demonstrates the implementation of a multi-area OSPF network using 
 - `Configurations/`: Router configuration files for all devices.
 - `Traffic_Analysis/`: Wireshark packet captures and traffic analysis documentation.
 - `Troubleshooting/`: Issues encountered and their resolutions.
+- `OSPF.gns3`: For deploying the lab in GNS3
 - `Lessons_Learned.md`: Key takeaways from the project.
 
 ## Tools Used
